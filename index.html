@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FITZONE</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Top Navbar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .navbar select,
+    .navbar input[type="text"] {
+      margin: 0 10px;
+      padding: 5px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .navbar input[type="text"] {
+      width: 200px;
+    }
+
+    .id-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin-left: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+      font-weight: bold;
+    }
+
+    /* Main Navbar */
+    .main-navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #444;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ffd700;
+    }
+
+    .cart-icon {
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* Background Section */
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b'); /* Bodybuilding background */
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .overlay-text h2 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    .overlay-text h1 {
+      font-size: 50px;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+
+    .overlay-text button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .overlay-text button:hover {
+      background-color: #e6b800;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <div class="navbar">
+    <div>
+      <select>
+        <option>USD</option>
+        <option>EUR</option>
+        <option>PKR</option>
+      </select>
+      <select>
+        <option>English</option>
+        <option>Français</option>
+        <option>اردو</option>
+      </select>
+    </div>
+    <input type="text" placeholder="Search..." />
+    <div class="id-icon">ID</div>
+  </div>
+
+  <!-- Main Navbar -->
+  <div class="main-navbar">
+    <div class="logo">FITZONE</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Men's</a>
+      <a href="#">Master</a>
+      <a href="#">Women</a>
+      <a href="#">More</a>
+      <a href="#">Blogs</a>
+    </div>
+    <div class="cart-icon">🛒</div>
+  </div>
+
+  <!-- Hero Section with Background -->
+  <div class="hero-section">
+    <div class="overlay-text">
+      <h2>Exclusive offer for your gym build</h2>
+      <h1>FITNESS FOR YOUR BUILD</h1>
+      <button>Shop Now</button>
+    </div>
+  </div>
+
+</body>
+</html>
