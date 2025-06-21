@@ -141,7 +141,15 @@
       justify-content: center;
     }
 
+   .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
     .card {
+      position: relative;
       background-color: white;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -154,6 +162,7 @@
       font-weight: bold;
       transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
+      overflow: visible;
     }
 
     .card:hover {
@@ -165,6 +174,23 @@
       text-decoration: none;
       color: #333;
       font-size: 16px;
+      z-index: 1;
+    }
+
+    .logo-div {
+      position: absolute;
+      top: -25px;
+      left: -10px;
+      width: 50px;
+      height: 50px;
+      background-color: #ffcc00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+      color: #333;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
@@ -212,15 +238,38 @@
   </div>
 
 
-   <div class="card-container">
-    <div class="card"><a href="#">Home</a></div>
-    <div class="card"><a href="#">Men's</a></div>
-    <div class="card"><a href="#">Master</a></div>
-    <div class="card"><a href="#">Women</a></div>
-    <div class="card"><a href="#">Punching</a></div>
-    <div class="card"><a href="#">Cable</a></div>
-    <div class="card"><a href="#">Pusher</a></div>
-  </div>
+    <div class="card-container">
+    <div class="card">
+      <div class="logo-div">H</div>
+      <a href="#">Home</a>
+    </div>
+    <div class="card">
+      <div class="logo-div">M</div>
+      <a href="#">Men's</a>
+    </div>
+    <div class="card">
+      <div class="logo-div">Ma</div>
+      <a href="#">Master</a>
+    </div>
+    <div class="card">
+      <div class="logo-div">W</div>
+      <a href="#">Women</a>
+    </div>
+    <div class="card">
+      <div class="logo-div">P</div>
+      <a href="#">Punching</a>
+    </div>
+    <div class="card">
+      <div class="logo-div">C</div>
+      <a href="#">Cable</a>
+    </div>
+    <div class="card">
+      <div class="logo-div">Pu</div>
+      <a href="#">Pusher</a>
+    </div>
+
+
+    
 
 </body>
 </html>
