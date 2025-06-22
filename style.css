@@ -28,6 +28,7 @@ body {
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s;
+  font-weight: bold;
 }
 
 .nav-links a:hover {
@@ -91,7 +92,6 @@ body {
 }
 
 .card {
-  position: relative;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -113,7 +113,6 @@ body {
   text-decoration: none;
   color: #333;
   font-size: 16px;
-  z-index: 1;
 }
 
 .logo-div {
@@ -135,8 +134,8 @@ body {
 
 /* Testimonial Section */
 .testimonials {
+  margin-top: 40px;
   text-align: center;
-  font-family: Arial, sans-serif;
 }
 
 .testimonial-card {
@@ -144,11 +143,12 @@ body {
   height: 350px;
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
 }
 
 .user-info {
-  margin-bottom: 15px;
+  margin-top: 50px;
+  margin-bottom: 10px;
 }
 
 .user-info img {
@@ -159,6 +159,8 @@ body {
 }
 
 .testimonial-card p {
+  padding: 25px;
+  margin-top: 30px;
   text-align: center;
   font-style: italic;
   color: #555;
@@ -166,32 +168,59 @@ body {
 }
 
 /* Subscribe Section */
-  .subscribe-section {
-    margin: 50px 0px;
-    background-color: #ffcc00;
-    padding: 3rem 4rem;
-    border-radius: #ffcc00;
-    width: 400px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  }
+.subscribe-section {
+  margin: 50px 0px;
+  background-color: #ffcc00;
+  padding: 3rem 4rem;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+}
 
-  .subscribe-section h2 {
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
+.subscribe-section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
-  .subscribe-section p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: var(--white);
-  }
+.subscribe-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
 
+.input-wrapper {
+  display: flex;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
 
+.subscribe-form input[type="email"] {
+  padding: 12px 16px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
 
-  
+.subscribe-form button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 0 12px;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.subscribe-form button:hover {
+  background-color: #333;
+}
 
 /* Footer */
 footer {
