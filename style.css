@@ -40,22 +40,16 @@ body {
   color: #ffd700;
 }
 
-/* Background Section */
-.hero-section {
+/* Hero Section */
+.carousel-inner img {
   height: 100vh;
-  background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b'); /* Bodybuilding background */
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
+  object-fit: cover;
 }
 
 .overlay-text {
-  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
   text-shadow: 2px 2px 4px #000;
 }
 
