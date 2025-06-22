@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>FITZONE Products</title>
+  <style>
+    .special-product-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.special-product-row .product-card {
+  flex: 1; /* Each product takes equal width inside the row */
+  height: 280px;
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    /* Main product container */
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .product-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 200px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .product-card h3 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .product-card p {
+      margin: 5px 0;
+      color: #666;
+    }
+
+    .product-card button {
+      padding: 8px 16px;
+      margin-top: 10px;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .product-card button:hover {
+      background-color: #e6b800;
+    }
+
+    /* New section for Special Product + Deal of the Day */
+    .special-deal-section {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto 60px auto;
+    }
+
+    .special-product,
+    .deal-of-day {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 600px; /* Same height for both */
+      flex: 1;
+    }
+
+    /* Special product grid: 2 x 2 layout */
+    .special-product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .special-product-grid .product-card {
+      width: calc(50% - 10px); /* two per row with some gap */
+      height: 280px;
+    }
+
+    /* Deal of the day product card styling */
+    .deal-of-day .product-card {
+      width: 100%;
+      height: 100%;
+      box-shadow: none;
+      border: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    .deal-of-day .product-card img {
+      height: 400px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .deal-of-day h2,
+    .special-product h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Our Products</h1>
+
+  <div class="product-container" id="productList">
+    <!-- Products will be injected here -->
+  </div>
+
+  <!-- Special Product + Deal of the Day Section -->
+  <div class="special-deal-section">
+
+    <div class="special-product">
+  <h2>Special Products</h2>
+  <div class="special-product-grid" id="specialProductList">
+    <!-- 4 special products will be injected here, grouped in rows -->
+  </div>
+</div>
+
+    <div class="deal-of-day">
+      <h2>Deal of the Day</h2>
+      <div id="dealOfDayProduct">
+        <!-- Deal of the day product will be injected here -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Load product data -->
+  <script src="data.js"></script>
+  <script>
+    const productList = document.getElementById("productList");
+    const specialProductList = document.getElementById("specialProductList");
+    const dealOfDayProduct = document.getElementById("dealOfDayProduct");
+
+    // Display all products
+    products.forEach(product => {
+      const card = document.createElement("div");
+      card.className = "product-card";
+      card.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" />
+        <h3>${product.name}</h3>
+        <p>${product.price}</p>
+        <p>Category: ${product.category}</p>
+        <button>Add to Cart</button>
+      `;
+      productList.appendChild(card);
+    });
+
+    // Special Products: pick first 4 products (or less if fewer)
+    specialProductList.innerHTML = "";
+
+// Take first 4 special products
+const specialProducts = products.slice(0, 4);
+
+// Loop in steps of 2
+for (let i = 0; i < specialProducts.length; i += 2) {
+  // Create a row div for 2 products
+  const row = document.createElement("div");
+  row.className = "special-product-row";
+
+  // Add up to 2 products in this row
+  for (let j = i; j < i + 2 && j < specialProducts.length; j++) {
+    const product = specialProducts[j];
+    const card = document.createElement("div");
+    card.className = "product-card";
+    card.innerHTML = `
+      <img src="${product.image}" alt="${product.name}" />
+      <h3>${product.name}</h3>
+      <p>${product.price}</p>
+      <button>Add to Cart</button>
+    `;
+    row.appendChild(card);
+  }
+
+  specialProductList.appendChild(row);
+}
+    // Deal of the Day: pick the 5th product, or fallback to first product
+    const dealProduct = products[4] || products[0];
+    const dealCard = document.createElement("div");
+    dealCard.className = "product-card";
+    dealCard.innerHTML = `
+      <img src="${dealProduct.image}" alt="${dealProduct.name}" />
+      <h3>${dealProduct.name}</h3>
+      <p>${dealProduct.price}</p>
+      <button>Add to Cart</button>
+    `;
+    dealOfDayProduct.appendChild(dealCard);
+  </script>
+
+</body>
+
+</html>

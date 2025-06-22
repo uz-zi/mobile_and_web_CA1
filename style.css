@@ -1,0 +1,244 @@
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Main Navbar */
+.main-navbar {
+  background-color: white;
+  color:black;
+  padding: 10px 20px;
+  z-index: 2;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  color:black
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+.cart:hover {
+  cursor: pointer;
+  color: #ffd700;
+}
+
+/* Background Section */
+.hero-section {
+  height: 100vh;
+  background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b'); /* Bodybuilding background */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.overlay-text h2 {
+  font-size: 32px;
+}
+
+.overlay-text h1 {
+  font-size: 50px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.overlay-text button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 16px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.overlay-text button:hover {
+  background-color: #e6b800;
+}
+
+/*Card Section */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 160px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  z-index: 1;
+}
+
+.logo-div {
+  position: absolute;
+  top: -25px;
+  left: -10px;
+  width: 50px;
+  height: 50px;
+  background-color: #ffcc00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Testimonial Section */
+.testimonials {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.testimonial-card {
+  width: 300px;
+  height: 350px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  margin-bottom: 15px;
+}
+
+.user-info img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.testimonial-card p {
+  text-align: center;
+  font-style: italic;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Subscribe Section */
+  .subscribe-section {
+    margin: 50px 0px;
+    background-color: #ffcc00;
+    padding: 3rem 4rem;
+    border-radius: #ffcc00;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  }
+
+  .subscribe-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .subscribe-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--white);
+  }
+
+
+
+  
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: white;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h4 {
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
