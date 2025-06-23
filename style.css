@@ -7,33 +7,42 @@ body {
   position: sticky;
   top: 0;
   z-index: 1030;
-  background-color: white;
+  background-color: black;
+  color: white;
+  padding-bottom: 9px;
 }
+
+.unstyled-select {
+    background-color: black;
+    border: none;
+    color: white;
+  }
 
 /* Main Navbar */
 .main-navbar {
+  border-top: 1px solid #444;
   position: sticky;
-  background-color: white;
-  color:black;
+  background-color: black;
+  color:white;
   padding: 10px 20px;
-  top: 40px;
+  top: 51px;
   z-index: 1020;
 }
 
 .logo {
   font-size: 22px;
   font-weight: bold;
-  color: black;
+  color: white;
 }
 
 .nav-links {
   display: flex;
   gap: 20px;
-  color:black
+  color:white
 }
 
 .nav-links a {
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 16px;
   transition: color 0.3s;
@@ -168,6 +177,35 @@ body {
   font-style: italic;
   color: #555;
   line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .testimonials {
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+  }
+
+  .user-info {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .user-info img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .testimonial-card p {
+    padding: 15px;
+    font-size: 14px;
+  }
 }
 
 /* Subscribe Section */

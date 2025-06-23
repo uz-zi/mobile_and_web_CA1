@@ -12,44 +12,98 @@
 </head>
 <body>
 
-<div class="bg-white pt-3 container-fluid d-flex justify-content-between top-navbar">
-	<div class="d-flex align-items-center">
-		<p class="mb-0">Currency:</p>
-		<select class="form-select-sm border-0 rounded py-1 me-2">
-			<option>USD</option>
-			<option>EUR</option>
-			<option>PKR</option>
-		</select>
+<div class="pt-3 container-fluid d-flex justify-content-between top-navbar d-none d-md-flex">
+  <div class="d-flex align-items-center">
+    <p class="mb-0">Currency:</p>
+    <select class="unstyled-select form-select-sm border-0 rounded py-1 me-2">
+      <option style="border: none;">USD</option>
+    </select>
 
-		<p class="mb-0">Language:</p>
-		<select class="form-select-sm border-0 rounded py-1">
-			<option>English</option>
-			<option>Français</option>
-			<option>اردو</option>
-		</select>
-	</div>
+    <p class="mb-0">Language:</p>
+    <select class="unstyled-select form-select-sm border-0 rounded py-1">
+      <option>English</option>
+    </select>
+  </div>
 
-	<div class="d-flex align-items-center">
-		<span class="material-icons me-3">search</span>
-		<span class="material-icons">person</span>
-	</div>
+  <div class="d-flex align-items-center">
+    <span class="material-icons search-icon me-3">search</span>
+    <span class="material-icons person-icon">person</span>
+  </div>
 </div>
-<hr class="mx-3">
-  <!-- Main Navbar -->
-<div class="main-navbar container-fluid d-flex align-items-center justify-content-between">
-	<div class="logo">
-		<span class="text-warning">FIT</span><span class="text-dark">ZONE</span>
-	</div>
-	<div class="nav-links">
-		<a href="#">Home</a>
-		<a href="#">Men's</a>
-		<a href="#">Master</a>
-		<a href="#">Women</a>
-		<a href="#">More</a>
-		<a href="#">Blogs</a>
-	</div>
-	<span class="cart material-icons">shopping_cart</span>
+
+<!-- Main Navbar -->
+<div class="main-navbar container-fluid d-flex align-items-center justify-content-between d-none d-md-flex">
+  <div class="logo">
+    <span class="text-warning">FIT</span><span class="text-light">ZONE</span>
+  </div>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Men's</a>
+    <a href="#">Master</a>
+    <a href="#">Women</a>
+    <a href="#">More</a>
+    <a href="#">Blogs</a>
+  </div>
+  <span class="cart material-icons">shopping_cart</span>
 </div>
+
+<!-- Mobile Navbar -->
+<nav class="navbar navbar-dark bg-dark d-md-none">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <span class="text-light">FITZONE</span>
+    <span class="cart material-icons text-light">shopping_cart</span>
+  </div>
+</nav>
+
+<!-- Mobile Sidebar -->
+<div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title text-light" id="offcanvasDarkNavbarLabel">FITZONE</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">Men's</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">Master</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">Women</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">More</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">Blogs</a>
+      </li>
+      <li class="nav-item">
+        <p class="nav-link text-light mb-0">Currency:</p>
+        <select class="form-select-sm border-0 rounded py-1 me-2">
+          <option>USD</option>
+          <option>EUR</option>
+          <option>PKR</option>
+        </select>
+      </li>
+      <li class="nav-item">
+        <p class="nav-link text-light mb-0">Language:</p>
+        <select class="form-select-sm border-0 rounded py-1">
+          <option>English</option>
+          <option>Français</option>
+          <option>اردو</option>
+        </select>
+      </li>
+    </ul>
+  </div>
+</div>
+
 
   <!-- Hero Section with Background -->
 <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -135,46 +189,72 @@
 	</div>	
 
  <!-- Testimonial Section -->
-  <div class="testimonials ">
-		<h2 class="mb-4">What Our Clients Say</h2>
-		<div class="d-flex align-items-center justify-content-center gap-5">
-			<div class="testimonial-card">
-				<div class="user-info">
-					<img src="https://contents.mediadecathlon.com/p1963850/89f39da2c19001d775e84b598a09552b/p1963850.jpg" alt="John D.">
-					<span class="name">John D.</span>
-				</div>
-				<p>"FITZONE transformed my training experience. The quality is top-notch!"</p>
-			</div>
-			<div class="testimonial-card">
-				<div class="user-info">
-					<img src="https://contents.mediadecathlon.com/p1963850/89f39da2c19001d775e84b598a09552b/p1963850.jpg" alt="John D.">
-					<span class="name">John D.</span>
-				</div>
-				<p>"FITZONE transformed my training experience. The quality is top-notch!"</p>
-			</div>
-			<div class="testimonial-card">
-				<div class="user-info">
-					<img src="https://contents.mediadecathlon.com/p1963850/89f39da2c19001d775e84b598a09552b/p1963850.jpg" alt="John D.">
-					<span class="name">John D.</span>
-				</div>
-				<p>"FITZONE transformed my training experience. The quality is top-notch!"</p>
-			</div>
-		</div>
-	</div>
+<div class="testimonials">
+  <h2 class="mb-4">What Our Clients Say</h2>
+
+  <!-- For medium and larger screens -->
+  <div class="d-none d-md-flex align-items-center justify-content-center gap-5">
+    <div class="testimonial-card">
+      <div class="user-info">
+        <img src="https://contents.mediadecathlon.com/p1963850/89f39da2c19001d775e84b598a09552b/p1963850.jpg" alt="John D.">
+        <span class="name">John D.</span>
+      </div>
+      <p>"FITZONE transformed my training experience. The quality is top-notch!"</p>
+    </div>
+    <div class="testimonial-card">
+      <div class="user-info">
+        <img src="https://contents.mediadecathlon.com/p1963850/89f39da2c19001d775e84b598a09552b/p1963850.jpg" alt="John D.">
+        <span class="name">John D.</span>
+      </div>
+      <p>"FITZONE transformed my training experience. The quality is top-notch!"</p>
+    </div>
+    <div class="testimonial-card">
+      <div class="user-info">
+        <img src="https://contents.mediadecathlon.com/p1963850/89f39da2c19001d775e84b598a09552b/p1963850.jpg" alt="John D.">
+        <span class="name">John D.</span>
+      </div>
+      <p>"FITZONE transformed my training experience. The quality is top-notch!"</p>
+    </div>
+  </div>
+
+  <!-- For small screens -->
+  <div class="d-block d-md-none">
+    <div class="testimonial-card">
+      <div class="user-info">
+        <img src="https://contents.mediadecathlon.com/p1963850/89f39da2c19001d775e84b598a09552b/p1963850.jpg" alt="John D.">
+        <span class="name">John D.</span>
+      </div>
+      <p>"FITZONE transformed my training experience. The quality is top-notch!"</p>
+
+      <div class="user-info mt-4">
+        <img src="https://contents.mediadecathlon.com/p1963850/89f39da2c19001d775e84b598a09552b/p1963850.jpg" alt="John D.">
+        <span class="name">John D.</span>
+      </div>
+      <p>"FITZONE transformed my training experience. The quality is top-notch!"</p>
+
+      <div class="user-info mt-4">
+        <img src="https://contents.mediadecathlon.com/p1963850/89f39da2c19001d775e84b598a09552b/p1963850.jpg" alt="John D.">
+        <span class="name">John D.</span>
+      </div>
+      <p>"FITZONE transformed my training experience. The quality is top-notch!"</p>
+    </div>
+  </div>
+</div>
+
   
 	<!-- Subscribe Section -->
-	 <div class="d-flex justify-content-center">
-  <div class="subscribe-section">
-  <h2>Subscribe</h2>
-  <p>Get the latest updates and offers directly to your inbox.</p>
-  <form class="subscribe-form" action="#" method="POST">
-    <div class="input-wrapper">
-      <input type="email" placeholder="Enter your email" required />
-      <button type="submit"><span class="material-icons">send</span></button>
+	<div class="d-flex justify-content-center">
+    <div class="subscribe-section">
+      <h2>Subscribe</h2>
+      <p>Get the latest updates and offers directly to your inbox.</p>
+      <form class="subscribe-form" action="#" method="POST">
+        <div class="input-wrapper">
+          <input type="email" placeholder="Enter your email" required />
+          <button type="submit"><span class="material-icons">send</span></button>
+        </div>
+      </form>
     </div>
-  </form>
-</div>
-</div>
+  </div>
 
   <!-- Footer Section -->
   <footer>
