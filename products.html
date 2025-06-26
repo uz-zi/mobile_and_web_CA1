@@ -129,7 +129,6 @@
     </div>
     <div class="deal-of-day">
       <h2>Deal of the Day</h2>
-      <div id="deal-timer" class="text-danger fw-bold mb-2 fs-4 text-center"></div>
       <div id="dealOfDayProduct">
         <!-- Deal of the day product will be injected here -->
       </div>
@@ -218,29 +217,6 @@
       `;
       dealOfDayProduct.appendChild(card);
     });
-
-    function startCountdown(duration, display) {
-    let timer = duration, hours, minutes, seconds;
-    const countdown = setInterval(() => {
-      hours = Math.floor(timer / 3600);
-      minutes = Math.floor((timer % 3600) / 60);
-      seconds = timer % 60;
-
-      display.textContent = 
-        `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-      if (--timer < 0) {
-        clearInterval(countdown);
-        display.textContent = "Deal expired!";
-      }
-    }, 1000);
-  }
-
-  window.onload = () => {
-    const dealTimer = document.getElementById("deal-timer");
-    const twentyFourHoursInSeconds = 24 * 60 * 60;
-    startCountdown(twentyFourHoursInSeconds, dealTimer);
-  };
   </script>
 
 
