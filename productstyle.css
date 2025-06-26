@@ -1,4 +1,8 @@
 /* --------------------------------------------- */
+	h1, h2 {
+		text-align: center;
+		margin-top: 30px;
+	} 
 	/* Main product container */
 	.product-container {
 		display: flex;
@@ -93,3 +97,54 @@
 		text-align: center;
 	}
  
+
+
+
+	@media (max-width: 1199px) {
+
+  .special-deal-section {
+    margin: 20px;
+		flex-direction: column;
+  }
+
+  .special-product,
+  .deal-of-day {
+    height: auto;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .special-product-grid {
+    justify-content: center;
+  }
+
+  .deal-of-day img {
+    width: 100%;
+    height: auto;
+  }
+
+  .special-product-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+
+	.product-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 30px;
+		margin: 30px 50px;
+	}
+
+	.product-card {
+		border: 1px solid #ccc;
+		border-radius: 8px;
+		width: 319px;
+		height: 283px;
+		text-align: center;
+		padding-top: 12px;
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+	}
+}
