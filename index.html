@@ -8,7 +8,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="style.css" />
-	
 </head>
 <body>
 
@@ -118,7 +117,7 @@
       <div class="carousel-caption d-none d-md-block overlay-text">
         <h2>Exclusive offer for your gym build</h2>
         <h1>FITNESS FOR YOUR BUILD</h1>
-        <button>Shop Now</button>
+        <button id="shop-now">Shop Now</button>
       </div>
     </div>
     <div class="carousel-item">
@@ -292,6 +291,13 @@
       &copy; 2025 FITZONE. All rights reserved.
     </div>
   </footer>
+
+
+  <script>
+    document.getElementById("shop-now").addEventListener("click", () => {
+      window.location.href = "products.html";
+    });
+  </script>
 
 </body>
 </html>

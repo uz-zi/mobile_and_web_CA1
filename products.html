@@ -179,6 +179,10 @@
         <h3>${product.name}</h3>
         <p>${product.price}</p>
       `;
+      card.addEventListener("click", () => {
+        localStorage.setItem("productId", product.id);
+        window.location.href = "product.html";
+      });
       productList.appendChild(card);
     });
 
