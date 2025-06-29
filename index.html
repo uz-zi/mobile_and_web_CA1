@@ -43,7 +43,10 @@
     <a href="#">More</a>
     <a href="#">Blogs</a>
   </div>
-  <span class="cart material-icons">shopping_cart</span>
+  <div class="cart-container">
+    <span class="cart material-icons" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">shopping_cart</span>
+    <span class="badge bg-warning text-dark" id="lblCartCount">0</span>
+  </div>
 </div>
 
 <!-- Mobile Navbar -->
@@ -292,9 +295,41 @@
   </footer>
 
 
+  <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Place Your Order</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <form>
+      <div class="mb-3">
+        <label for="emailInput" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+      </div>
+      <div class="mb-3">
+        <p class="fw-bold">Payment Method:</p>
+        <p>Pay on Delivery</p>
+      </div>
+      <button type="submit" class="btn btn-warning w-100">Place Order</button>
+    </form>
+  </div>
+</div>
+
+
   <script>
     document.getElementById("shop-now").addEventListener("click", () => {
       window.location.href = "products.html";
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      updateCartCount();
+
+      function updateCartCount() {
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const cartCount = cartItems.length;
+        document.getElementById("lblCartCount").textContent = cartCount;
+      }
+      window.updateCartCount = updateCartCount;
     });
   </script>
 

@@ -53,6 +53,34 @@ body {
   color: #ffd700;
 }
 
+.cart-container {
+  position: relative;
+  display: inline-block;
+}
+
+#lblCartCount {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 12px;
+  background: #ffd700;
+  color: #fff;
+  padding: 0 5px;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  border-radius: 9px;
+}
+
+.label-warning[href],
+.badge-warning[href] {
+  background-color: #c67605;
+}
+
 .cart:hover {
   cursor: pointer;
   color: #ffd700;
