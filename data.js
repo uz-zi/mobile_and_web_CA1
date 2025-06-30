@@ -11,8 +11,15 @@ const products = [
     size: "M, L, XL",
     color: "Black",
     category: "Men's Fitness Wear",
-    image:
+    image: "https://static.vecteezy.com/system/resources/previews/035/232/930/non_2x/ai-generated-gym-dumbles-on-transparent-background-ai-generated-png.png",
+    additionalImages: [
       "https://static.vecteezy.com/system/resources/previews/035/232/930/non_2x/ai-generated-gym-dumbles-on-transparent-background-ai-generated-png.png",
+      "https://static.vecteezy.com/system/resources/previews/035/929/520/non_2x/ai-generated-running-shoes-isolated-on-transparent-background-ai-png.png",
+      "https://static.vecteezy.com/system/resources/previews/042/878/380/large_2x/american-barbell-rack-on-transparent-background-png.png",
+      "https://static.vecteezy.com/system/resources/previews/057/530/365/non_2x/black-weight-bench-with-barbell-for-home-gym-workout-free-png.png"
+    ],
+    rating: 4.5,
+    reviews: 120
   },
   {
     id: 2,
@@ -24,8 +31,15 @@ const products = [
     size: "S, M, L",
     color: "Charcoal",
     category: "Women's Fitness Wear",
-    image:
+    image: "https://static.vecteezy.com/system/resources/previews/035/929/520/non_2x/ai-generated-running-shoes-isolated-on-transparent-background-ai-png.png",
+    additionalImages: [
+      "https://static.vecteezy.com/system/resources/previews/035/232/930/non_2x/ai-generated-gym-dumbles-on-transparent-background-ai-generated-png.png",
       "https://static.vecteezy.com/system/resources/previews/035/929/520/non_2x/ai-generated-running-shoes-isolated-on-transparent-background-ai-png.png",
+      "https://static.vecteezy.com/system/resources/previews/042/878/380/large_2x/american-barbell-rack-on-transparent-background-png.png",
+      "https://static.vecteezy.com/system/resources/previews/057/530/365/non_2x/black-weight-bench-with-barbell-for-home-gym-workout-free-png.png"
+    ],
+    rating: 4.8,
+    reviews: 200
   },
   {
     id: 3,
@@ -37,8 +51,15 @@ const products = [
     size: "XS, S, M",
     color: "Grey",
     category: "Women's Fitness Wear",
-    image:
+    image: "https://static.vecteezy.com/system/resources/previews/042/878/380/large_2x/american-barbell-rack-on-transparent-background-png.png",
+    additionalImages: [
+      "https://static.vecteezy.com/system/resources/previews/035/232/930/non_2x/ai-generated-gym-dumbles-on-transparent-background-ai-generated-png.png",
+      "https://static.vecteezy.com/system/resources/previews/035/929/520/non_2x/ai-generated-running-shoes-isolated-on-transparent-background-ai-png.png",
       "https://static.vecteezy.com/system/resources/previews/042/878/380/large_2x/american-barbell-rack-on-transparent-background-png.png",
+      "https://static.vecteezy.com/system/resources/previews/057/530/365/non_2x/black-weight-bench-with-barbell-for-home-gym-workout-free-png.png"
+    ],
+    rating: 4.2,
+    reviews: 100
   },
   {
     id: 4,
@@ -50,8 +71,15 @@ const products = [
     size: "M, L, XL",
     color: "Navy Blue",
     category: "Men's Fitness Wear",
-    image:
-      "https://static.vecteezy.com/system/resources/previews/057/530/365/non_2x/black-weight-bench-with-barbell-for-home-gym-workout-free-png.png",
+    image: "https://static.vecteezy.com/system/resources/previews/057/530/365/non_2x/black-weight-bench-with-barbell-for-home-gym-workout-free-png.png",
+    additionalImages: [
+      "https://static.vecteezy.com/system/resources/previews/035/232/930/non_2x/ai-generated-gym-dumbles-on-transparent-background-ai-generated-png.png",
+      "https://static.vecteezy.com/system/resources/previews/035/929/520/non_2x/ai-generated-running-shoes-isolated-on-transparent-background-ai-png.png",
+      "https://static.vecteezy.com/system/resources/previews/042/878/380/large_2x/american-barbell-rack-on-transparent-background-png.png",
+      "https://static.vecteezy.com/system/resources/previews/057/530/365/non_2x/black-weight-bench-with-barbell-for-home-gym-workout-free-png.png"
+    ],
+    rating: 4.0,
+    reviews: 80
   },
   {
     id: 5,
@@ -63,8 +91,15 @@ const products = [
     size: "M, L, XL",
     color: "Black",
     category: "Men's Fitness Wear",
-    image:
+    image: "https://static.vecteezy.com/system/resources/previews/035/232/930/non_2x/ai-generated-gym-dumbles-on-transparent-background-ai-generated-png.png",
+    additionalImages: [
       "https://static.vecteezy.com/system/resources/previews/035/232/930/non_2x/ai-generated-gym-dumbles-on-transparent-background-ai-generated-png.png",
+      "https://static.vecteezy.com/system/resources/previews/035/929/520/non_2x/ai-generated-running-shoes-isolated-on-transparent-background-ai-png.png",
+      "https://static.vecteezy.com/system/resources/previews/042/878/380/large_2x/american-barbell-rack-on-transparent-background-png.png",
+      "https://static.vecteezy.com/system/resources/previews/057/530/365/non_2x/black-weight-bench-with-barbell-for-home-gym-workout-free-png.png"
+    ],
+    rating: 4.5,
+    reviews: 120
   },
   {
     id: 6,
@@ -76,8 +111,15 @@ const products = [
     size: "S, M, L",
     color: "Charcoal",
     category: "Women's Fitness Wear",
-    image:
+    image: "https://static.vecteezy.com/system/resources/previews/035/929/520/non_2x/ai-generated-running-shoes-isolated-on-transparent-background-ai-png.png",
+    additionalImages: [
+      "https://static.vecteezy.com/system/resources/previews/035/232/930/non_2x/ai-generated-gym-dumbles-on-transparent-background-ai-generated-png.png",
       "https://static.vecteezy.com/system/resources/previews/035/929/520/non_2x/ai-generated-running-shoes-isolated-on-transparent-background-ai-png.png",
+      "https://static.vecteezy.com/system/resources/previews/042/878/380/large_2x/american-barbell-rack-on-transparent-background-png.png",
+      "https://static.vecteezy.com/system/resources/previews/057/530/365/non_2x/black-weight-bench-with-barbell-for-home-gym-workout-free-png.png"
+    ],
+    rating: 4.8,
+    reviews: 200
   },
   {
     id: 7,
@@ -89,8 +131,15 @@ const products = [
     size: "XS, S, M",
     color: "Grey",
     category: "Women's Fitness Wear",
-    image:
+    image: "https://static.vecteezy.com/system/resources/previews/042/878/380/large_2x/american-barbell-rack-on-transparent-background-png.png",
+    additionalImages: [
+      "https://static.vecteezy.com/system/resources/previews/035/232/930/non_2x/ai-generated-gym-dumbles-on-transparent-background-ai-generated-png.png",
+      "https://static.vecteezy.com/system/resources/previews/035/929/520/non_2x/ai-generated-running-shoes-isolated-on-transparent-background-ai-png.png",
       "https://static.vecteezy.com/system/resources/previews/042/878/380/large_2x/american-barbell-rack-on-transparent-background-png.png",
+      "https://static.vecteezy.com/system/resources/previews/057/530/365/non_2x/black-weight-bench-with-barbell-for-home-gym-workout-free-png.png"
+    ],
+    rating: 4.2,
+    reviews: 100
   },
   {
     id: 8,
@@ -102,8 +151,15 @@ const products = [
     size: "M, L, XL",
     color: "Navy Blue",
     category: "Men's Fitness Wear",
-    image:
-      "https://static.vecteezy.com/system/resources/previews/057/530/365/non_2x/black-weight-bench-with-barbell-for-home-gym-workout-free-png.png",
+    image: "https://static.vecteezy.com/system/resources/previews/057/530/365/non_2x/black-weight-bench-with-barbell-for-home-gym-workout-free-png.png",
+    additionalImages: [
+      "https://static.vecteezy.com/system/resources/previews/035/232/930/non_2x/ai-generated-gym-dumbles-on-transparent-background-ai-generated-png.png",
+      "https://static.vecteezy.com/system/resources/previews/035/929/520/non_2x/ai-generated-running-shoes-isolated-on-transparent-background-ai-png.png",
+      "https://static.vecteezy.com/system/resources/previews/042/878/380/large_2x/american-barbell-rack-on-transparent-background-png.png",
+      "https://static.vecteezy.com/system/resources/previews/057/530/365/non_2x/black-weight-bench-with-barbell-for-home-gym-workout-free-png.png"
+    ],
+    rating: 4.0,
+    reviews: 80
   },
 ];
 
