@@ -172,16 +172,19 @@
     </div>
   </footer>
 
-  <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Place Your Order</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    <form>
+    <form id="orderForm">
       <div class="mb-3">
         <label for="emailInput" class="form-label">Email address</label>
         <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+        
+        <label for="addressInput" class="form-label mt-3">Home address</label>
+        <input type="text" class="form-control" id="addressInput" placeholder="123 Main St" required>
       </div>
       <div class="mb-3">
         <p class="fw-bold">Payment Method:</p>
@@ -190,6 +193,13 @@
       <div id="cart-items"></div>
       <button type="submit" class="btn btn-warning w-100">Place Order</button>
     </form>
+
+    <div class="alert alert-success d-none mt-3" id="successAlert" role="alert">
+      Your order has been placed successfully!
+    </div>
+    <div class="alert alert-danger d-none mt-3" id="dangerAlert" role="alert">
+      Your cart is empty. Please add items before placing an order.
+    </div>
   </div>
 </div>
 
@@ -340,7 +350,46 @@ function displayCartItems() {
 const offcanvas = document.getElementById('offcanvasScrolling');
 offcanvas.addEventListener('shown.bs.offcanvas', displayCartItems);
 
-  
+  document.getElementById("orderForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    const successAlert = document.getElementById("successAlert");
+    const dangerAlert = document.getElementById("dangerAlert");
+    const emailInput = document.getElementById("emailInput");
+    const addressInput = document.getElementById("addressInput");
+    const cartItemsDiv = document.getElementById("cart-items");
+    const closeBtn = document.querySelector('[data-bs-dismiss="offcanvas"]');
+
+    // Hide both alerts first
+    successAlert.classList.add("d-none");
+    dangerAlert.classList.add("d-none");
+
+    if (cartItems.length === 0) {
+      dangerAlert.classList.remove("d-none");
+    } else {
+      // Clear cart from localStorage
+      localStorage.removeItem("cartItems");
+
+      // Clear form fields and cart items display
+      emailInput.value = "";
+      addressInput.value = "";
+      cartItemsDiv.innerHTML = "";
+
+      // Show success alert
+      successAlert.classList.remove("d-none");
+
+      // Close offcanvas after 3 seconds
+      setTimeout(() => {
+        const offcanvasEl = document.getElementById('offcanvasScrolling');
+        const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+        if (offcanvas) {
+          offcanvas.hide();
+        }
+      }, 3000);
+        }
+  });
   </script>
 </body>
 </html>
