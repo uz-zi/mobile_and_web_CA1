@@ -27,7 +27,7 @@
 
   <div class="d-flex align-items-center position-relative">
     <span class="material-icons search-icon me-3" onclick="toggleSearch()">search</span>
-    <input type="text" id="searchInput" placeholder="Search..." style="display: none; position: absolute; right: 40px;" oninput="searchProducts()">
+    <input type="text" id="searchInput" placeholder="Search..." style="display: none; position: absolute; right: 73px;" oninput="searchProducts()">
     <span class="material-icons person-icon">person</span>
   </div>
 
@@ -50,13 +50,17 @@
 </div>
 
 <!-- Mobile Navbar -->
-<nav class="navbar navbar-dark bg-dark d-md-none">
+<nav class="navbar navbar-dark bg-dark d-md-none mobilenavbar">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <span class="text-light">FITZONE</span>
-    <span class="cart material-icons text-light">shopping_cart</span>
+    <div class="d-flex align-items-center" style="position: relative;">
+      <span class="material-icons search-icon text-light" onclick="mobiletoggleSearch()">search</span>
+      <input type="text" id="Mobilesearchinput" placeholder="Search..." style="display: none; position: absolute; right: 69px;" oninput="mobilesearchProducts()">
+      <span class="cart material-icons text-light">shopping_cart</span>
+    </div>
   </div>
 </nav>
 
@@ -210,7 +214,17 @@
 
     function toggleSearch() {
       var input = document.getElementById("searchInput");
-      if (input.style.display === "none") {
+      if (input.style.display === "none" || input.style.display === "") {
+        input.style.display = "block";
+        input.focus();
+      } else {
+        input.style.display = "none";
+      }
+    }
+
+    function mobiletoggleSearch() {
+      var input = document.getElementById("Mobilesearchinput");
+      if (input.style.display === "none" || input.style.display === "") {
         input.style.display = "block";
         input.focus();
       } else {
@@ -239,6 +253,30 @@
       productList.appendChild(card);
     });
   }
+
+   function mobilesearchProducts() {
+    const query = document.getElementById("Mobilesearchinput").value.toLowerCase();
+    productList.innerHTML = "";
+    const results = products.filter(p => p.name.toLowerCase().includes(query));
+
+    if (results.length === 0) {
+      container.innerHTML = "<p>No products found.</p>";
+      return;
+    }
+
+    results.forEach(product => {
+      const card = document.createElement("div");
+      card.className = "product-card";
+      card.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" />
+        <h3>${product.name}</h3>
+        <p>${product.price}</p>
+      `;
+      productList.appendChild(card);
+    });
+  }
+
+  
   </script>
 </body>
 </html>

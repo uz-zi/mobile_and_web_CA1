@@ -3,6 +3,14 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.mobilenavbar {
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+  background-color: black;
+  color: white;
+}
+
 .top-navbar {
   position: sticky;
   top: 0;
