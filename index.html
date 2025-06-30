@@ -63,7 +63,10 @@
     <div class="d-flex align-items-center" style="position: relative;">
       <span class="material-icons search-icon text-light" onclick="mobiletoggleSearch()">search</span>
       <input type="text" id="Mobilesearchinput" placeholder="Search..." style="display: none; position: absolute; right: 69px;" oninput="mobilesearchProducts()">
-      <span class="cart material-icons text-light">shopping_cart</span>
+      <div class="cart-container">
+        <span class="cart material-icons" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">shopping_cart</span>
+        <span class="badge bg-warning text-dark" id="mobilelblCartCount">0</span>
+      </div>
     </div>
   </div>
 </nav>
@@ -340,6 +343,17 @@
         const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
         const cartCount = cartItems.length;
         document.getElementById("lblCartCount").textContent = cartCount;
+      }
+      window.updateCartCount = updateCartCount;
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      updateCartCount();
+
+      function updateCartCount() {
+        const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+        const cartCount = cartItems.length;
+        document.getElementById("mobilelblCartCount").textContent = cartCount;
       }
       window.updateCartCount = updateCartCount;
     });

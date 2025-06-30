@@ -78,6 +78,18 @@ body {
   line-height: 1;
 }
 
+#mobilelblCartCount {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 12px;
+  background: #ffd700;
+  color: #fff;
+  padding: 0 5px;
+  border-radius: 50%;
+  line-height: 1;
+}
+
 .badge {
   padding-left: 9px;
   padding-right: 9px;
