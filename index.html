@@ -24,10 +24,12 @@
     </select>
   </div>
 
-  <div class="d-flex align-items-center">
-    <span class="material-icons search-icon me-3">search</span>
+  <div class="d-flex align-items-center position-relative">
+    <span class="material-icons search-icon me-3" onclick="toggleSearch()">search</span>
+    <input type="text" id="searchInput" placeholder="Search..." style="display: none; position: absolute; right: 73px;" oninput="searchProducts()">
     <span class="material-icons person-icon">person</span>
   </div>
+
 </div>
 
 <!-- Main Navbar -->
@@ -50,13 +52,19 @@
 </div>
 
 <!-- Mobile Navbar -->
-<nav class="navbar navbar-dark bg-dark d-md-none">
+<nav class="navbar navbar-dark bg-dark d-md-none mobilenavbar">
   <div class="container-fluid">
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <span class="text-light">FITZONE</span>
-    <span class="cart material-icons text-light">shopping_cart</span>
+    <div>
+    <span class="text-warning">FIT</span><span class="text-light">ZONE</span>
+    </div>
+    <div class="d-flex align-items-center" style="position: relative;">
+      <span class="material-icons search-icon text-light" onclick="mobiletoggleSearch()">search</span>
+      <input type="text" id="Mobilesearchinput" placeholder="Search..." style="display: none; position: absolute; right: 69px;" oninput="mobilesearchProducts()">
+      <span class="cart material-icons text-light">shopping_cart</span>
+    </div>
   </div>
 </nav>
 
@@ -120,7 +128,7 @@
       <div class="carousel-caption d-block overlay-text">
         <h2>Exclusive offer for your gym build</h2>
         <h1>FITNESS FOR YOUR BUILD</h1>
-        <button id="shop-now" class="carousal-button">Shop Now</button>
+        <button class="carousal-button">Shop Now</button>
       </div>
     </div>
     <div class="carousel-item">
@@ -128,7 +136,7 @@
       <div class="carousel-caption d-block overlay-text">
         <h2>Get fit, stay fit</h2>
         <h1>UNLEASH YOUR POTENTIAL</h1>
-        <button id="shop-now" class="carousal-button">Shop Now</button>
+        <button class="carousal-button">Shop Now</button>
       </div>
     </div>
     <div class="carousel-item">
@@ -136,7 +144,7 @@
       <div class="carousel-caption d-block overlay-text">
         <h2>Train like a pro</h2>
         <h1>ACHIEVE YOUR GOALS</h1>
-        <button id="shop-now" class="carousal-button">Shop Now</button>
+        <button class="carousal-button">Shop Now</button>
       </div>
     </div>
   </div>
@@ -310,15 +318,19 @@
         <p class="fw-bold">Payment Method:</p>
         <p>Pay on Delivery</p>
       </div>
+      <div id="cart-items"></div>
       <button type="submit" class="btn btn-warning w-100">Place Order</button>
     </form>
   </div>
 </div>
 
 
-  <script>
-    document.getElementById("shop-now").addEventListener("click", () => {
-      window.location.href = "products.html";
+  <script src="data.js"></script>
+  <script>  
+    document.querySelectorAll(".carousal-button").forEach(button => {
+      button.addEventListener("click", () => {
+        window.location.href = "products.html";
+      });
     });
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -331,6 +343,36 @@
       }
       window.updateCartCount = updateCartCount;
     });
+
+    
+
+// Function to display cart items
+function displayCartItems() {
+  const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  const cartItemsDiv = document.getElementById('cart-items');
+
+  // Clear any existing cart items
+  cartItemsDiv.innerHTML = '';
+
+  // Loop through cart items and display them
+  cartItems.forEach((id) => {
+    const product = products.find((product) => product.id === id);
+    if (product) {
+      const cartItemHtml = `
+        <div class="cart-item">
+          <img src="${product.image}" alt="${product.name}">
+          <span>${product.name}</span>
+        </div>
+      `;
+      cartItemsDiv.insertAdjacentHTML('beforeend', cartItemHtml);
+    }
+  });
+}
+
+// Call the function to display cart items when the offcanvas is shown
+const offcanvas = document.getElementById('offcanvasScrolling');
+offcanvas.addEventListener('shown.bs.offcanvas', displayCartItems);
+    
   </script>
 
 </body>
