@@ -11,6 +11,10 @@ body {
   color: white;
 }
 
+.offcanvas-start{
+  background-color: black;
+}
+
 .top-navbar {
   position: sticky;
   top: 0;
